@@ -118,9 +118,9 @@ public class HallBookingSystem {
                                 """;
                                 dF += String.format(dataFormat, hallName, id, formatDateTime);
 
-
-                                // Update hall array
                                 hall[r][c] = "|" + parts[0] + "-" + parts[1] + "::BO|";
+                                System.out.println(blue + " SUCCESSFULLY !!!");
+                                System.out.println(HORIZONTAL_BORDER.repeat(160) + reset);
                             } else {
                                 System.out.println("  >> ERROR !! Seat already booked.\n");
                             }
@@ -137,8 +137,6 @@ public class HallBookingSystem {
                 String getFormat = String.format(format, row);
                 String combinedString =getFormat+ dF;
                 history[n++] = combinedString;
-                System.out.println(history.length);
-                System.out.println(combinedString);
             } else {
                 System.out.println("  >> ERROR !! INVALID FORMAT !\n");
             }
