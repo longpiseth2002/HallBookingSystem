@@ -9,6 +9,7 @@ public class HallBookingSystem {
 
     // Color
     String reset = "\u001B[0m";
+    String red = "\u001B[31m";
     String green = "\u001B[32m";
     String blue = "\u001B[34m";
     String cyan = "\u001B[36m";
@@ -119,13 +120,10 @@ public class HallBookingSystem {
                                 dF += String.format(dataFormat, hallName, id, formatDateTime);
 
                                 hall[r][c] = "|" + parts[0] + "-" + parts[1] + "::BO|";
-                                System.out.println(blue + " SUCCESSFULLY !!!");
-                                System.out.println(HORIZONTAL_BORDER.repeat(160) + reset);
                             } else {
                                 System.out.println("  >> ERROR !! Seat already booked.\n");
                             }
                         }
-                        System.out.println();
                     } else {
                         System.out.println("  >> ERROR !! INVALID FORMAT !\n");
                     }
@@ -137,6 +135,8 @@ public class HallBookingSystem {
                 String getFormat = String.format(format, row);
                 String combinedString =getFormat+ dF;
                 history[n++] = combinedString;
+                System.out.println(blue + " SUCCESSFULLY !!!");
+                System.out.println(HORIZONTAL_BORDER.repeat(160) + reset);
             } else {
                 System.out.println("  >> ERROR !! INVALID FORMAT !\n");
             }
@@ -288,30 +288,25 @@ public class HallBookingSystem {
             if (entry == null) {
                 continue;
             }
-            System.out.println("# NO : " + i++);
+            System.out.println(green + "# NO : " + i++);
             System.out.println(entry);
             hasHistory = true;
+            System.out.println(HORIZONTAL_BORDER.repeat(160));
         }
 
         if (!hasHistory) {
-            System.out.println("THERE IS NOT HISTORY ... ");
+            System.out.println(red + "THERE IS NOT HISTORY ... " + reset);
         }
 
-        System.out.println(HORIZONTAL_BORDER.repeat(160) + reset);
     }
 
 
 
     public static void main(String[] args) {
         String reset = "\u001B[0m";
-        String red = "\u001B[31m";
-        String green = "\u001B[32m";
-        String yellow = "\u001B[33m";
         String blue = "\u001B[34m";
         String magenta = "\u001B[35m";
         String cyan = "\u001B[36m";
-        String white = "\u001B[37m";
-        String black = "\u001B[30m";
 
 
         Scanner scanner = new Scanner(System.in);
